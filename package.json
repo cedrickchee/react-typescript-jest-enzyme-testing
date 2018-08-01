@@ -1,0 +1,14 @@
+{
+  "name": "typescript-testing",
+  "version": "0.0.1",
+  "description": "Learn TypeScript testing with Jest and Cypress",
+  "main": "index.js",
+  "author": "Cedric Chee",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@types/jest": "^23.3.1",
+    "jest": "^23.4.2",
+    "ts-jest": "^23.0.1"
+  }
+}
