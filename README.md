@@ -117,16 +117,16 @@ Add this in `package.json`:
 
 Enzyme allows you to test React components with DOM support. There are three steps to setting up Enzyme:
 
-1. Install Enzyme, types for Enzyme, a better snapshot serializer for Enzyme, enzyme-adapter-react for your React version:
+1. Install Enzyme, types for Enzyme, a better snapshot serializer for Enzyme, enzyme-adapter-react and types for enzyme-adapter-react for your React version:
 
 ```sh
-yarn add enzyme @types/enzyme enzyme-to-json enzyme-adapter-react-16 --dev
+yarn add enzyme @types/enzyme enzyme-to-json enzyme-adapter-react-16 @types/enzyme-adapter-react-16 --dev
 
 # or if you are using NPM
-npm i enzyme @types/enzyme enzyme-to-json enzyme-adapter-react-16 -D
+npm i enzyme @types/enzyme enzyme-to-json enzyme-adapter-react-16 @types/enzyme-adapter-react-16 -D
 ```
 
-2. Add "snapshotSerializers" and "setupTestFrameworkScriptFile" to your `jest.config.js`:
+2. Add "snapshotSerializers" and "setupFilesAfterEnv" to your `jest.config.js`:
 
 ```javascript
 module.exports = {
@@ -134,7 +134,7 @@ module.exports = {
 
   // Setup Enzyme
   "snapshotSerializers": ["enzyme-to-json/serializer"],
-  "setupTestFrameworkScriptFile": "<rootDir>/src/setupEnzyme.ts",
+  "setupFilesAfterEnv": ["<rootDir>/src/setupEnzyme.ts"],
 }
 ```
 
